@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    color: #333;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #3498db;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Back button */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.back-btn:hover {
+    background: #343a40;
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Search form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 18px 24px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    animation: fadeIn 0.8s ease;
+}
+
+form label {
+    font-weight: 600;
+    color: #34495e;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    background: #fff;
+}
+
+/* Buttons */
+form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form button[type="submit"] {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+form button[type="submit"]:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+form button[name="clear"] {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+form button[name="clear"]:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Table */
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease;
+}
+
+table th, table td {
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 15px;
+}
+
+table th {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tr:hover {
+    background: #d6eaf8;
+    transition: background 0.3s ease;
+}
+
+/* Refresh button */
+#refreshBtn {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #27ae60, #219150);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+#refreshBtn:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+#refreshBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Timestamp */
+#lastRefreshed {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+#lastRefreshed.updated {
+    color: #27ae60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
